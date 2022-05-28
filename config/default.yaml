@@ -1,7 +1,7 @@
 # training parameters
 lr: 1e1
 content_weight: 1e5
-style_weight: 3e4
+style_weight: 3e3
 variance_weight: 1e0
 optimizer: "lbfgs"
 epochs: 1000
@@ -14,13 +14,14 @@ normalize: True
 
 # images and shapes
 content_img: 'examples/content/prof.jpg'
-style_img: 'examples/style/picasso2.jpg'
-target_shape: [640, 480]
+style_img: 'examples/style/sen_drzewa.jpg'
+target_shape: [480, 480]
 
 # img writing parameters
 fps: 300
-save_freq: 50
+save_freq: 30
 show: True
+n_parts: 5
 
 # paths
 outputs: 'outputs'

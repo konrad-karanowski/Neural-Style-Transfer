@@ -9,7 +9,12 @@ import moviepy.editor as moviepy
 
 class VideoWriter:
 
-    def __init__(self, fps: int = 30, show: bool = True, save_freq: int = 10, name: str = ''):
+    def __init__(self,
+                 fps: int = 30,
+                 show: bool = True,
+                 save_freq: int = 10,
+                 name: str = '',
+                 n_parts: int = 4):
         """
         Class for saving img, crating gif and displaying process
         :param fps: fps of gif
@@ -21,6 +26,7 @@ class VideoWriter:
         self.name = name
         self.save_freq = save_freq
         self.show = show
+        self.n_parts = n_parts
         self.imgs = []
         self.thread = threading.Thread(target=self._start)
 
@@ -61,8 +67,8 @@ class VideoWriter:
         :return:
         """
         num_images = len(imgs)
-        new_imgs = imgs[:num_images // 10] + [img for i, img in enumerate(imgs[num_images // 10:]) if
-                                             i % self.save_freq == 0]
+        new_imgs = imgs[:num_images // self.n_parts] + [
+            img for i, img in enumerate(imgs[num_images // self.n_parts:]) if i % self.save_freq == 0]
         return new_imgs
 
     def save(self) -> None:
