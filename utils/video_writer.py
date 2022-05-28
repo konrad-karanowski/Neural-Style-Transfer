@@ -72,5 +72,5 @@ class VideoWriter:
         """
         h, w, _ = self.imgs[0].shape
         editor = moviepy.ImageSequenceClip(self._reorganize_images(self.imgs), fps=self.fps)
-        editor.write_gif(f'outputs/{self.name}.gif', fps=self.fps)
-        cv2.imwrite(f'outputs/{self.name}.png', self.imgs[-1][:, :, ::-1])
+        editor.write_gif(f'{self.name}.gif', fps=self.fps)
+        cv2.imwrite(f'{self.name}.png', self.imgs[-1][:, :, ::-1])

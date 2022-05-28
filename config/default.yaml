@@ -13,14 +13,17 @@ content_layers: [4]
 normalize: True
 
 # images and shapes
-content_img: 'examples/content/kn2.jpg'
-style_img: 'examples/style/witkacy.jpg'
+content_img: 'examples/content/prof.jpg'
+style_img: 'examples/style/picasso2.jpg'
 target_shape: [640, 480]
 
 # img writing parameters
 fps: 300
 save_freq: 50
 show: True
+
+# paths
+outputs: 'outputs'
 
 # ignore, only for hydra
 defaults:

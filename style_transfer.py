@@ -7,9 +7,11 @@ from utils import read_img, train_model, VideoWriter
 @hydra.main(config_path='config', config_name='default.yaml')
 def main(config):
     content_name = config.content_img.split("/")[-1].split(".")[0]
-    if not os.path.exists(f'outputs/{content_name}'):
-        os.mkdir(f'outputs/{content_name}')
-    save_name = f'{content_name}/{content_name}_{config.style_img.split("/")[-1].split(".")[0]}_sw_{config.style_weight}_cw_{config.content_weight}'
+    output_path = os.path.join(config.outputs, content_name)
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+    save_name = os.path.join(output_path,
+                             f'{content_name}_{config.style_img.split("/")[-1].split(".")[0]}_sw_{config.style_weight}_cw_{config.content_weight}')
     video_writer = VideoWriter(
         fps=config.fps,
         show=config.show,
