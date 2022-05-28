@@ -1,3 +1,13 @@
+examples/content/*
+examples/style/*
+outputs/*
+
+!examples/content/ketrzyn.jpg
+!examples/style/witkacy.jpg
+!examples/style/starry_night.jpg
+!outputs/kn_gif.gif
+!outputs/thumbnail.bmp
+
 # Byte-compiled / optimized / DLL files
 .idea
 __pycache__/
