@@ -1,11 +1,11 @@
 # training parameters
 lr: 1e1
 content_weight: 1e5
-style_weight: 0 #3e3
-variance_weight: 0 #1e1
+style_weight: 3e3
+variance_weight: 1e1
 optimizer: "lbfgs"
-epochs: 500
-init_method: "noise"
+epochs: 1500
+init_method: "content_img"
 
 # style transfer options
 style_layers: [0, 1, 2, 3, 5]
@@ -18,10 +18,10 @@ style_img: 'examples/style/witkacy.jpg'
 target_shape: [640, 480]
 
 # img writing parameters
-fps: 300
+fps: 400
 save_freq: 50
 show: False
-n_parts: 500
+n_parts: 200
 
 # paths
 outputs: 'outputs'
