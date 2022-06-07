@@ -67,8 +67,7 @@ class VideoWriter:
         :return:
         """
         num_images = len(imgs)
-        new_imgs = imgs[:num_images // self.n_parts] + [
-            img for i, img in enumerate(imgs[num_images // self.n_parts:]) if i % self.save_freq == 0]
+        new_imgs = [img for i, img in enumerate(imgs[0:]) if i % self.save_freq == 0]
         return new_imgs
 
     def save(self) -> None:

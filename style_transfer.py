@@ -11,7 +11,7 @@ def main(config):
     if not os.path.exists(output_path):
         os.mkdir(output_path)
     save_name = os.path.join(output_path,
-                             f'{content_name}_{config.style_img.split("/")[-1].split(".")[0]}_sw_{config.style_weight}_cw_{config.content_weight}')
+                             f'{content_name}_{config.style_img.split("/")[-1].split(".")[0]}_sw_{config.style_weight}_cw_{config.content_weight}_tw_{config.variance_weight}')
     video_writer = VideoWriter(
         fps=config.fps,
         show=config.show,

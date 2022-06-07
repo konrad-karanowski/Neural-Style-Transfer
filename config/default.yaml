@@ -1,27 +1,27 @@
 # training parameters
 lr: 1e1
 content_weight: 1e5
-style_weight: 3e3
-variance_weight: 1e0
+style_weight: 0 #3e3
+variance_weight: 0 #1e1
 optimizer: "lbfgs"
-epochs: 1000
-init_method: "content_img"
+epochs: 500
+init_method: "noise"
 
 # style transfer options
 style_layers: [0, 1, 2, 3, 5]
-content_layers: [4]
+content_layers: [0, 4]
 normalize: True
 
 # images and shapes
-content_img: 'examples/content/prof.jpg'
-style_img: 'examples/style/sen_drzewa.jpg'
-target_shape: [480, 480]
+content_img: 'examples/content/ketrzyn.jpg'
+style_img: 'examples/style/witkacy.jpg'
+target_shape: [640, 480]
 
 # img writing parameters
 fps: 300
-save_freq: 30
-show: True
-n_parts: 5
+save_freq: 50
+show: False
+n_parts: 500
 
 # paths
 outputs: 'outputs'
