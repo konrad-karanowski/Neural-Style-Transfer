@@ -13,10 +13,9 @@ Check out how awesome it is!
 ## How to use
 Code will create new folder for your content image, saves the final image, but also creates a gif file.
 
-### Environment setup
-To create environment use anaconda in this dir:
+### Installation
 ```
-conda env create -f env.yml
+pip3 install -r requirements.txt
 ```
 
 ### Use script
