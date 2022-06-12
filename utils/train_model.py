@@ -1,6 +1,7 @@
 from typing import Iterable, Sequence, Tuple
 
 import torch
+from tqdm import tqdm
 
 from models import VGG19Model
 from utils.gramm_matrix import gram_matrix
@@ -120,5 +121,20 @@ def train_model(
             return total_loss
 
         optimizer.step(_closure)
+    elif optimizer_str == 'adam':
+        optimizer = torch.optim.Adam([trainable_img], lr=lr)
+        for i in tqdm(range(max_epochs)):
+            optimizer.zero_grad()
+            img_features, img_grams = get_image_features(trainable_img, model, content_layers, style_layers)
+            total_loss = sum(criterion(
+                target_feature_maps=target_feature_maps,
+                target_gram_matrices=target_gram_matrices,
+                img_feature_maps=img_features,
+                img_gram_matrices=img_grams,
+                img=trainable_img
+            ))
+            total_loss.backward()
+            video_writer.append_img(trainable_img.cpu().detach()[0].permute(1, 2, 0).numpy())
+            optimizer.step()
     else:
         raise Exception(f'Unsupported optimizer: {optimizer_str}')
