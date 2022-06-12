@@ -9,7 +9,7 @@ init_method: "content_img"
 
 # style transfer options
 style_layers: [0, 1, 2, 3, 5]
-content_layers: [0, 4]
+content_layers: [4]
 normalize: True
 
 # images and shapes
@@ -18,8 +18,8 @@ style_img: 'examples/style/witkacy.jpg'
 target_shape: [640, 480]
 
 # img writing parameters
-fps: 400
-save_freq: 50
+fps: 250
+save_freq: 25
 show: False
 n_parts: 200
 
