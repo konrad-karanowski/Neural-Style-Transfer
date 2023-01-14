@@ -1,7 +1,7 @@
 # Neural-Style-Transfer
 Source code for the student lecture "neural style transfer" as part of the "Artificial Intelligence" course at the Wrocław University of Technology.
 
-This repo bases on original Neural Style Transfer paper (Gatys at al. 2015): https://arxiv.org/abs/1508.06576
+This repo bases on original Neural Style Transfer paper (Gatys et al. 2015): https://arxiv.org/abs/1508.06576
 
 ## Examples
 Style transfer allows us to create an image of certain thing (content image) with certain style (style image).
